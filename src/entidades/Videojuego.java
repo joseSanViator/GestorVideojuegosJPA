@@ -18,7 +18,9 @@ public class Videojuego implements Serializable{
 	
 	public Videojuego() {
 	}
-	
+	public String toString() {
+		return "Titulo: "+this.nombre+"\nDesarrollador: "+this.desarrollador+"\nAño: "+this.anyoLanzamiento;
+	}
 	public Videojuego(String nombre, String desarrollador, int anyoLanzamiento) {
 		this.nombre = nombre;
 		this.desarrollador = desarrollador;
