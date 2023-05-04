@@ -5,8 +5,20 @@ import java.io.Serializable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(
+		name="Videojuego.todos",
+		query="SELECT v from Videojuego v"	
+	),
+	@NamedQuery(
+		name="Videojuego.porAnyo",
+		query="SELECT v from Videojuego v where v.anyoLanzamiento=:anyo"	
+		)
+	})
 //@Table(name="otroNombre")
 public class Videojuego implements Serializable{
 	@Id

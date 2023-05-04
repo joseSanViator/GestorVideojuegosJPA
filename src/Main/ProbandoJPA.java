@@ -1,5 +1,6 @@
-package entidades;
+package Main;
 
+import entidades.Videojuego;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -12,7 +13,7 @@ public class ProbandoJPA {
 		EntityManagerFactory emFactory=Persistence.createEntityManagerFactory("gestorVideojuegos");
 		EntityManager em=emFactory.createEntityManager();
 		
-	/*	EntityTransaction tran=em.getTransaction();
+		EntityTransaction tran=em.getTransaction();
 		tran.begin();
 		Videojuego j0=new Videojuego("Jedi Survivor","Electronic Arts", 2023);
 		Videojuego j1=new Videojuego("The legend of Zelda Tears of the kingdom","Nintendo", 2023);
@@ -27,12 +28,12 @@ public class ProbandoJPA {
 		for(Videojuego j:juegos) {
 			em.persist(j);
 		}
-		tran.commit();*/
+		tran.commit();
 		
 		//Buscar un objeto en la base de datos por id
 		/*Videojuego juego=em.find(Videojuego.class, 52);
 		System.out.println(juego);*/
-		Videojuego juego2=em.find(Videojuego.class, 53);
+	/*	Videojuego juego2=em.find(Videojuego.class, 53);
 		System.out.println(juego2);
 		if(juego2!=null) {
 			/*EntityTransaction tran=em.getTransaction();
@@ -40,10 +41,10 @@ public class ProbandoJPA {
 			juego2.setDesarrollador("Bethesda");
 			juego2.setAnyoLanzamiento(2018);
 			tran.commit();*/
-		}
+		
 		//Actualizamos los datos del juego FIFA
 		//1-SAco el objeto de la base de datos
-		Videojuego fifa=em.find(Videojuego.class, 55);
+	/*	Videojuego fifa=em.find(Videojuego.class, 55);
 		//1a-Compruebo si el juego se ha obtenido de la base de datos
 			if(fifa!=null) {
 			//2-creo una transacción
@@ -56,8 +57,8 @@ public class ProbandoJPA {
 			fifa.setDesarrollador("EA Sports");
 			//5-Hago commmit de los cambios.
 			tran.commit();
-		}		
-			//Borrado de objetos de la base de datos
+		}		*/
+			/*//Borrado de objetos de la base de datos
 			Videojuego juegoBorrar=em.find(Videojuego.class, 1);
 			//Como el borrado modifica la base de datos, tengo que crear una transacción
 			EntityTransaction tran=em.getTransaction();
@@ -65,6 +66,6 @@ public class ProbandoJPA {
 			tran.begin();
 			//A continuación, con la transacción iniciada, borramos el objeto del EntityManager
 			em.remove(juegoBorrar);
-			tran.commit();
+			tran.commit();*/
 	}
 }
